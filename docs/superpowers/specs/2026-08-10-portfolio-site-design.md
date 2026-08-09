@@ -43,7 +43,7 @@ The page must not show an introductory paragraph, `SEOUL`, an employment status 
 - A strong fixed fade and backdrop blur soften the bottom of the page.
 - A fixed pill dock mirrors the reference structure: GitHub link, divider, system theme, light theme, dark theme.
 - Use local/system fonts only. No external font request is required.
-- Desktop content width is 650 px, page side padding is at least 20 px, the profile image is 54 × 54 px, and the bottom blur is approximately 205 px high.
+- Desktop content width is 650 px, page side padding is at least 20 px, the profile image is 40 × 40 px on desktop and mobile, and the bottom blur is approximately 205 px high.
 - Dark tokens: background `#080808`, primary text `#eeeeef`, secondary text `#8d8d92`, muted text `#626267`, surface `#111112`.
 - Light tokens: background `#f5f5f3`, primary text `#171719`, secondary text `#656568`, muted text `#929296`, surface `#ffffff`.
 - All text and interactive controls must meet WCAG 2.2 AA contrast.
