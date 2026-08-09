@@ -276,7 +276,6 @@ Static data remains local. The application does not need a server, API, form, an
 - Store the profile image under `src/assets/profile.png` and project visuals under `src/assets/projects/`. Import every asset from TypeScript so Vite emits base-aware hashed URLs; do not use root-relative `/assets/...` strings.
 - The committed, checksummed visual inputs live under `docs/superpowers/specs/reference/assets/`. Copy them byte-for-byte to their output paths during implementation. They are already approved and compressed; no further re-encoding or image optimization is allowed.
 - Use descriptive `alt` text that names the project and screen or diagram.
-- Optimize images for the page without changing or generating project content.
 - Include explicit `width` and `height` attributes from this manifest to avoid layout shift.
 
 | Output asset | Current approved file or crop source | Source PDF page and crop box | Dimensions | Alt text |
