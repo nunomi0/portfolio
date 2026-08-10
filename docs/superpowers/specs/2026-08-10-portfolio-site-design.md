@@ -80,11 +80,15 @@ Education rows do not have tooltips because their supporting descriptions are al
 
 ### Certificates
 
-Show SQLD, OPIc, and TOPCIT only.
+Show SQLD, OPIc IH, and TOPCIT only. Hover/focus help contains dates only:
+
+- SQLD: `취득일 · 2026.06.19`
+- OPIc IH: `취득일 · 2025.03.07`
+- TOPCIT: `평가일 · 2024.10.12`
 
 ### Awards
 
-Show these nine records exactly. The `Context` line is visible; `Tooltip` supplies the organizer plus context.
+Show these nine records exactly. The `Context` line is visible. Awards do not use tooltips because the additional hover text duplicates visible information and causes overlap.
 
 | Award | Date | Context | Tooltip |
 |---|---|---|---|
@@ -106,15 +110,15 @@ Portfolio is the final section. The visible order is Koala, Mongkids, ThorVG, Co
 
 ### Informational Tooltips
 
-- Tooltips are required for Tech Stack, Experience, Certificates, and Awards. Education alone has no tooltip because its supporting text is already visible. `TooltipItem` owns one controlled `openTooltipId`; visibility is not derived directly from CSS focus selectors.
+- Tooltips are required for Tech Stack, Experience, and Certificates. Education and Awards do not use tooltips because their supporting text is already visible. `TooltipItem` owns one controlled `openTooltipId`; visibility is not derived directly from CSS focus selectors.
 - Tech Stack tooltip strings are exact: Frontend `프로젝트에 적용해 봤어요`; Backend `KOSA MSA 기반 Full Stack 개발자 양성과정`; DevOps `KOSA 실습 및 프로젝트`; Etc `알고리즘 문제 풀이 · 프로젝트 적용`.
-- Certificate tooltip strings are exact: SQLD `SQL 개발자 자격`; OPIc `영어 말하기 평가`; TOPCIT `소프트웨어 역량 평가`.
-- Experience and Award tooltip strings are defined in their content sections above.
+- Certificate tooltip strings are exact: SQLD `취득일 · 2026.06.19`; OPIc IH `취득일 · 2025.03.07`; TOPCIT `평가일 · 2024.10.12`.
+- The Experience tooltip string is defined in its content section above.
 - Hovered or keyboard-focused items become more prominent while sibling items in the same group fade and blur slightly.
 - The tooltip fades in, moves upward about 6 px, and resolves from a small blur using a short ease-out transition.
 - Each trigger uses `aria-describedby` to reference one `role="tooltip"` element. Fine-pointer `mouseenter` and keyboard `focus` set its ID active. Fine-pointer `mouseleave`, `blur`, Escape, or an outside pointer press clear the active ID. Escape clears the state while leaving keyboard focus on the trigger; the tooltip does not reopen until a new `focus` or `mouseenter` event occurs.
 - On coarse-pointer devices, the first tap focuses the trigger and sets its ID active; tapping the same trigger or outside clears the active ID. Tooltip state never traps navigation.
-- Dimming is scoped to siblings inside the same Tech Stack or Awards group. The single Experience row has no sibling-dimming effect.
+- Dimming is scoped to siblings inside the same Tech Stack or Certificates group. The single Experience row has no sibling-dimming effect.
 
 ### Project Detail Dialog
 
@@ -325,13 +329,13 @@ Static data remains local. The application does not need a server, API, form, an
 Use Vitest and React Testing Library for behavior:
 
 - Tech Stack renders before Experience.
-- Only SQLD, OPIc, and TOPCIT appear as certificates.
+- Only SQLD, OPIc IH, and TOPCIT appear as certificates, with their exact date tooltips.
 - All seven projects show their technology stacks in the main list.
 - Clicking a project opens the correct detail and cropped project images.
 - Closing restores focus to the triggering project.
 - Escape, close-button, and backdrop closure each close the dialog and unlock document scrolling.
 - Dialog labeling, initial close-button focus, and background inert behavior are present.
-- Tooltip hover/focus opens the right source-backed text, sibling dimming stays group-scoped, and Escape/blur closes it.
+- Tooltip hover/focus opens the right source-backed text, sibling dimming stays group-scoped, and Escape/blur closes it; Awards and Education render no tooltips.
 - Coarse-pointer tap toggles a tooltip and outside press dismisses it.
 - Theme choices update the document theme and persistence state; system mode reacts to media-query changes.
 - Theme buttons expose their Korean accessible names and exactly one `aria-pressed="true"` state matching the stored choice.
@@ -359,4 +363,5 @@ Run a production build and inspect desktop and mobile layouts in a real browser.
 - Education has no redundant tooltip.
 - Project rows show technology stacks before opening.
 - Project dialogs show only related visuals on the left and source-backed, nonduplicated detail on the right.
+- Every project detail image resolves from an imported Vite asset and remains visible in the dialog in local preview and GitHub Pages.
 - All theme, tooltip, modal, keyboard, and responsive behaviors work without browser console errors.

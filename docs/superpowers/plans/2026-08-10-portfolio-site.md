@@ -40,7 +40,7 @@ Expected: lockfile created; exit 0.
 The single App suite must check only the high-value contract:
 - H1 `YUKYUN LEE` and profile alt text;
 - headings in order: Tech Stack, Experience, Education & Training, Certificates, Awards & Competitions, Portfolio;
-- 6 education entries, SQLD/OPIc/TOPCIT only, 9 awards, and 7 projects;
+- 6 education entries, SQLD/OPIc IH/TOPCIT only, 9 awards, and 7 projects;
 - each project stack is visible before opening;
 - no `SEOUL`, intro paragraph, employment-status line, `정보처리기사`, `AWS SAA`, or `준비중`.
 
@@ -71,7 +71,7 @@ Expected: `cmp` exits 0.
 
 - [ ] **Step 2: Add typed source-backed records**
 
-Create types and arrays for Tech Stack, Experience, Education, Certificates, Awards, and Projects. Copy every string, date, stack, metadata row, work item, link, image dimension, and alt text exactly from the approved design spec; do not paraphrase. Import every image from TypeScript so Vite creates base-aware URLs. Preserve project display order Koala, Mongkids, ThorVG, CookAssistant, SmartGlasses, STEP, ONDUE and original project numbers.
+Create types and arrays for Tech Stack, Experience, Education, Certificates, Awards, and Projects. Copy every string, date, stack, metadata row, work item, link, image dimension, and alt text exactly from the approved design spec; do not paraphrase. Certificates are SQLD, OPIc IH, and TOPCIT with exact date tooltips. Awards have no tooltip field. Import every image from TypeScript so Vite creates base-aware URLs and project detail images cannot depend on root-relative paths. Preserve project display order Koala, Mongkids, ThorVG, CookAssistant, SmartGlasses, STEP, ONDUE and original project numbers.
 
 - [ ] **Step 3: Render the factual page**
 
@@ -104,8 +104,8 @@ git commit -m "feat: build portfolio content"
 - [ ] **Step 1: Write one failing interaction smoke suite**
 
 Keep it compact. Test only:
-- one tooltip opens on hover/focus and closes on Escape/outside press;
-- Education has no tooltip;
+- one Tech/Certificate tooltip opens on hover/focus and closes on Escape/outside press;
+- Education and Awards have no tooltip;
 - first visit is dark, theme buttons switch/persist, and exactly one has `aria-pressed="true"`;
 - clicking Koala opens a labeled dialog with technology first and 3 related images;
 - close button/Escape close it and focus returns to Koala;
@@ -119,7 +119,7 @@ Expected: FAIL because interactions are not implemented.
 
 - [ ] **Step 3: Implement grouped tooltips**
 
-Use controlled tooltip state for Tech Stack, Experience, Certificates, and Awards. Show inactive tooltip elements with `hidden`; use `aria-describedby` only while open. Support fine-pointer hover, keyboard focus/Escape, coarse-pointer tap toggle, and outside dismissal. Scope fade/blur only to siblings in the same group.
+Use controlled tooltip state for Tech Stack, Experience, and Certificates only. Show inactive tooltip elements with `hidden`; use `aria-describedby` only while open. Support fine-pointer hover, keyboard focus/Escape, coarse-pointer tap toggle, and outside dismissal. Scope fade/blur only to siblings in the same group. Render Awards and Education without tooltip triggers.
 
 - [ ] **Step 4: Implement theme dock**
 

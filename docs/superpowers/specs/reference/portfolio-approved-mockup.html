@@ -403,7 +403,7 @@
 
     <section>
       <h2 class="section-title">Certificates</h2>
-      <div class="certificates info-group"><span data-tip="SQL 개발자 자격">SQLD</span><span data-tip="영어 말하기 평가">OPIc</span><span data-tip="소프트웨어 역량 평가">TOPCIT</span></div>
+      <div class="certificates info-group"><span data-tip="취득일 · 2026.06.19">SQLD</span><span data-tip="취득일 · 2025.03.07">OPIc IH</span><span data-tip="평가일 · 2024.10.12">TOPCIT</span></div>
     </section>
 
     <section>
@@ -470,7 +470,7 @@
   </dialog>
 
   <script>
-    document.querySelectorAll('[data-tip]').forEach(target => {
+    document.querySelectorAll('[data-tip]:not(.award)').forEach(target => {
       target.classList.add('info-target');
       target.tabIndex = 0;
       target.setAttribute('aria-label', `${target.innerText.trim()} — ${target.dataset.tip}`);
