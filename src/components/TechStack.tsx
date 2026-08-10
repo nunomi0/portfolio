@@ -1,17 +1,18 @@
 import { techStack } from '../data/portfolio'
+import { TooltipGroup, TooltipItem } from './TooltipItem'
 
 export function TechStack() {
   return (
-    <section aria-labelledby="tech-stack-heading">
-      <h2 id="tech-stack-heading">Tech Stack</h2>
-      <ul>
+    <section className="tech-section" aria-labelledby="tech-stack-heading">
+      <h2 className="section-title" id="tech-stack-heading">Tech Stack</h2>
+      <TooltipGroup className="skills">
         {techStack.map((item) => (
-          <li key={item.category} title={item.tooltip}>
-            <h3>{item.category}</h3>
-            <p>{item.technologies}</p>
-          </li>
+          <TooltipItem key={item.category} id={`tech-${item.category.toLowerCase()}`} tooltip={item.tooltip} className="skill">
+            <b>{item.category}</b>
+            <span>{item.technologies}</span>
+          </TooltipItem>
         ))}
-      </ul>
+      </TooltipGroup>
     </section>
   )
 }

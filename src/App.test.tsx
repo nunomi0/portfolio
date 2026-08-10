@@ -49,6 +49,9 @@ test('renders the complete source-backed portfolio content in the approved order
 
   const portfolio = screen.getByRole('region', { name: 'Portfolio' })
   expect(within(portfolio).getAllByRole('listitem')).toHaveLength(7)
+  expect(within(portfolio).getAllByRole('article').map((article) => article.getAttribute('aria-label'))).toEqual(
+    projects.map(([name]) => name),
+  )
   projects.forEach(([name, stack]) => {
     const project = within(portfolio).getByRole('article', { name })
     expect(within(project).getByText(stack)).toBeInTheDocument()

@@ -1,16 +1,17 @@
 import { certificates } from '../data/portfolio'
+import { TooltipGroup, TooltipItem } from './TooltipItem'
 
 export function Credentials() {
   return (
     <section aria-labelledby="certificates-heading">
-      <h2 id="certificates-heading">Certificates</h2>
-      <ul>
+      <h2 className="section-title" id="certificates-heading">Certificates</h2>
+      <TooltipGroup className="certificates">
         {certificates.map((certificate) => (
-          <li key={certificate.name} title={certificate.tooltip}>
+          <TooltipItem key={certificate.name} id={`certificate-${certificate.name.replaceAll(' ', '-').toLowerCase()}`} tooltip={certificate.tooltip}>
             {certificate.name}
-          </li>
+          </TooltipItem>
         ))}
-      </ul>
+      </TooltipGroup>
     </section>
   )
 }
