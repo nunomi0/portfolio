@@ -24,7 +24,7 @@ const projects = [
 test('renders the complete source-backed portfolio content in the approved order', () => {
   render(<App />)
 
-  expect(screen.getByRole('heading', { level: 1, name: 'YUKYUN LEE' })).toBeInTheDocument()
+  expect(screen.getByRole('heading', { level: 1, name: 'YUKYUNG LEE' })).toBeInTheDocument()
   expect(screen.getByRole('img', { name: '이유경 프로필 사진' })).toHaveAttribute('width', '1254')
   expect(screen.getAllByRole('heading', { level: 2 }).map((heading) => heading.textContent)).toEqual([
     'Tech Stack',

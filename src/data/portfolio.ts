@@ -1,4 +1,5 @@
 import profileImage from '../assets/profile.png'
+import profileHoverImage from '../assets/profile-hover.jpg'
 import cookAssistantImage from '../assets/projects/project-cookassistant-01.webp'
 import koalaImage1 from '../assets/projects/project-koala-01.webp'
 import koalaImage2 from '../assets/projects/project-koala-02.webp'
@@ -61,11 +62,15 @@ export type Project = {
 }
 
 export const profile = {
-  name: 'YUKYUN LEE',
+  name: 'YUKYUNG LEE',
   image: profileImage,
   imageWidth: 1254,
   imageHeight: 1254,
   imageAlt: '이유경 프로필 사진',
+  hoverImage: profileHoverImage,
+  hoverImageWidth: 1024,
+  hoverImageHeight: 1497,
+  hoverImageAlt: '이유경 일러스트 프로필 사진',
 } as const
 
 export const techStack: TechStackRecord[] = [
@@ -95,27 +100,27 @@ export const experience: InfoRecord[] = [
   {
     title: 'QA Engineer Intern · 라포랩스',
     date: '2025.12—2026.03',
-    description: '웹·앱 Release QA · 상시 배포 팔로업 · 앱 전수 조사 · QA 문서 관리',
+    description: '웹·앱 Release QA · 배포 팔로업 · QA 문서 관리',
     tooltip:
-      '매주 웹·앱 Release QA 전체 담당 · TanStack Query P0–P3 시나리오 검증 · React Native 라이브러리 업데이트 영향 범위 파악 및 테스트',
+      '라포랩스에서 웹·앱 Release QA, 상시 배포 팔로업, 앱 전수 조사 및 QA 문서 관리를 담당했습니다.',
   },
 ]
 
 export const education: InfoRecord[] = [
   {
     title: '현대퓨처넷 11기 MSA 기반 Full Stack 개발자 양성과정',
-    description: '인사 관리 · 메시지 발송 · 현대백화점 셀렉터스',
-    date: '2026.04.06—09.04',
+    description: 'Java · Oracle · Spring Boot · React 기반 Full Stack 웹 개발',
+    date: '2026.04—2026.09',
   },
   {
     title: '2025 오픈소스 컨트리뷰션 아카데미',
     description: '벡터 그래픽 렌더링 엔진 ThorVG 오픈소스 기여',
-    date: '2025.07—11',
+    date: '2025.07—2025.11',
   },
   {
     title: '네이버 부스트캠프 챌린지 웹 풀스택',
     description: 'JavaScript를 이용한 프로그램 설계 및 CS 학습',
-    date: '2025.07—08',
+    date: '2025.07—2025.08',
   },
   {
     title: 'UMC 5th Web',
@@ -125,7 +130,7 @@ export const education: InfoRecord[] = [
   {
     title: '삼성전자 DX 부문 동계 S/W 역량강화 특강',
     description: 'C++을 이용한 알고리즘 문제 풀이 학습',
-    date: '2023.01—02',
+    date: '2023.01—2023.02',
   },
   {
     title: '한국항공대학교',
