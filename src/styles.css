@@ -368,7 +368,7 @@ time {
   width: 26px;
   height: 26px;
   transform: translate(-50%, -50%) rotate(0deg);
-  border: 1px solid color-mix(in srgb, var(--strong) 58%, transparent);
+  border: 0;
   border-radius: 50%;
   background: color-mix(in srgb, var(--strong) 13%, transparent);
   box-shadow: 0 2px 16px color-mix(in srgb, var(--shadow) 48%, transparent);
@@ -379,7 +379,7 @@ time {
 
 .cursor-indicator.is-interactive .cursor-indicator__shape {
   width: 1px;
-  height: 28px;
+  height: 26px;
   transform: translate(-50%, -50%) rotate(0deg);
   border-color: transparent;
   border-radius: 999px;
