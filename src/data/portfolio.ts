@@ -17,7 +17,6 @@ import thorvgImage4 from '../assets/projects/project-thorvg-04.webp'
 export type TechStackRecord = {
   category: string
   technologies: string
-  tooltip: string
 }
 
 export type InfoRecord = {
@@ -77,30 +76,26 @@ export const techStack: TechStackRecord[] = [
   {
     category: 'Frontend',
     technologies: 'JavaScript, TypeScript, React, Next.js, Flutter',
-    tooltip: '프로젝트에 적용해 봤어요',
   },
   {
     category: 'Backend',
     technologies: 'Java, Spring Boot, REST API, SQL, Supabase',
-    tooltip: 'KOSA MSA 기반 Full Stack 개발자 양성과정',
   },
   {
     category: 'DevOps',
     technologies: 'Git, Docker, AWS, Nginx, CI/CD',
-    tooltip: 'KOSA 실습 및 프로젝트',
   },
   {
     category: 'Etc',
     technologies: 'Python, C++, Kotlin, RAG, VectorDB',
-    tooltip: '알고리즘 문제 풀이 · 프로젝트 적용',
   },
 ]
 
 export const experience: InfoRecord[] = [
   {
-    title: 'QA Engineer Intern · 라포랩스',
+    title: 'QA Engineer Intern',
     date: '2025.12—2026.03',
-    description: '웹·앱 Release QA · 배포 팔로업 · QA 문서 관리',
+    description: '라포랩스',
     tooltip:
       '라포랩스에서 웹·앱 Release QA, 상시 배포 팔로업, 앱 전수 조사 및 QA 문서 관리를 담당했습니다.',
   },
